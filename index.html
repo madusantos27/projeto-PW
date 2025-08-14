@@ -8,19 +8,26 @@
         <title> Portifolio </title>
     </head>
     <body>
-        
-
-      <div class="centralizar-tela"
-        img src="img/foto 1.webp" alt=" descrição da foto"  class=" imagem redonda">
-        <img src="img/foto 2 .jpg" alt=" descrição da foto"  class=" imagem redonda">
-        <p> @madu_santos.00 </p>
       
-      </div>
-    
-    <div class="buttons">
-        <button id="darkMode">Modo Escuro</button>
-        <button id="lightMode">Modo Claro</button>
-    </div>         
+      <div id="container">
+        <div id="profile">
+
+          <img 
+          class=" profile-photo"
+          src="./img/foto 1.webp" 
+          alt="foto de uma menina"/>
+
+          <p> @madu_santos </p>
+
+        </div>
+
+        <div id=" switch" onclick="toggleMode()">
+
+          <button></button>
+          <span></span>
+
+        </div>
+
      <ul>
         <li><a href="#">Um pouco sobre mim</a></li>
         <li><a href="#">Baixar Currículo</a></li>
@@ -33,5 +40,15 @@
         <li><a href="#">Instagram</a></li>
         <li><a href="#">LinkedIn</a></li>
     </ul>
+
+    <div id="social- links">
+
+      <a href="https://github.com/madusantos27" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      
+
+
+    </div>
     </body>
     </html>
