@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+
+    background: url("../img/bg-desktop.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+ 
+}
+
+img {
+    
+    margin: 0 auto;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+
+}
+
+img {
+
+    margin: 0 auto;
+    display: block;
+    width: 70px;
+    height: 70px; 
+    border-radius: 40px;
+}
+    
+button{
+
+    width: 110px;
+    height: 20px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/moon-stars.svg);
+    background-repeat: no-repeat; 
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+ 
+    transform: scale(1.05);      /* Dá uma leve aumentada no botão */
+}
+
+button:active {
+    transform: scale(0.95);      /* Dá um efeito de clique */
+}
+
+
+  
