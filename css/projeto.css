@@ -1,63 +1,195 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* remove a margem padrão de todos os elementos */
+    padding: 0; /* remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* define o box model para incluir bordar e preenchimento no tamanho total*/
 } 
 
-body {
+/* modo escuro padrão*/
 
-    background: url("../img/bg-desktop.jpg");
-    background-repeat: no-repeat;
+body {
+    background: url(../img/bg-desktop.jpg) no-repeat top center; /* define a imagem de fundo ajusta a posição e tamanho*/
+    height: 100vh; /* define a altura do corpo como 100% da altura da janela de visualização*/
+}
+
+body * {
+    color: white; /* define a cor do texto de todos os elementos filhos como brancos*/
+}
+
+p {
+    font-family: "inter", sans-serif; /* aplica a fonte inter aos paragrafos*/
+}
+
+a {
+    text-decoration: none; /* remove o sublinho padrão dos links*/
+}
+
+#conteiner {
+
+    width: 100%; /* faz o container ocupar toda a largura disponivel*/
+    max-width: 588px; /* define a largura maxima para o container*/
+    margin: 56px auto 0px; /*centraliza o container horizontalmente e define um espaçamento superior*/
+    padding: 0 24px; /* adiciona preenchimento horizontal dentro do container*/
+}
+  
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img{
+    width: 112px;
+}
+
+#profile p {
+
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+}
+
+#switch button {
+    width: 32px; /* define a largura do botão*/
+    height: 32px;/* define a altura do botão*/
+    background: white url(../img/moon-stars.svg) no repeat center; /* define a cor e icone do funco do botão*/
+    border: 0; /*remove a borda padrão do botão*/
+    border-radius: 50%; /* faz o botão ser circular*/
+    position: absolute; /*permite posicionar o botaõ dentro do switch*/
+    top: 50%; /*posiciona o botão no meio vertical dentro do switch*/
+    left: 0; /* alinha o botão a esquerda do switch*/
+    z-index: 1; /* garante que o botão esteja acima dos outros elementos */
+    transform: translateY(-50%); /* ajusta o botão para ficar centralizado verticalmente */
+    animation: slide-back 0.2s; /* adiciona uma animação para o botão*/
+}
+
+.light #switch button {
+
+    animation: slide-in 0.2s forwards; /*adiciona uma animação para o botão no modo claro*/
+    background:  white url(../img/sun.svg) no-repeat center; /* altera o icone para um sol no modo claro*/
+}
+
+#switch button:hover {
+    outline: 8px solid rgba(255, 255, 255, 0.2); /* adiciona um contorno ao botão ao passarmoos o mouse
+    */
+}
+
+.light #switch span {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* links */
+
+ul {
+    list-style:  nome;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+ul li a {
     display: flex;
     align-items: center;
-    height: 100vh;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px;
     color: white;
- 
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: nome;
+    font-weight: 500;
+    transition: background 0.2s;
 }
 
-img {
-    
-    margin: 0 auto;
-    display: block;
-    width: 70px;
-    height: 70px;
-    border-radius: 40px;
-
+ul li a :hover {
+    background: rgba(0, 0, 0.02);
+    border: 1.5px solid white;
 }
 
-img {
-
-    margin: 0 auto;
-    display: block;
-    width: 70px;
-    height: 70px; 
-    border-radius: 40px;
+.light ul li a {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
 }
-    
-button{
 
-    width: 110px;
-    height: 20px;
-    font-size: small;
+.light ul li a :hover{
+     background: rgba(0, 0, 0, 0.2);
+    border: 1.5px solid black;
+}
+
+/*social links*/
+
+#social-links a {
+    color: white;
     display: flex;
+    align-items: center;
     justify-content: center;
-    background-image: url(../img/moon-stars.svg);
-    background-repeat: no-repeat; 
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.2s;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
 }
 
-button:hover {
- 
-    transform: scale(1.05);      /* Dá uma leve aumentada no botão */
+#social-links a :hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-button:active {
-    transform: scale(0.95);      /* Dá um efeito de clique */
+.light #social-links a :hover {
+    background: rgba(0, 0, 0, 0.1);
 }
 
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
 
-  
+.profile-photo {
+    border-radius: 50%; /* torna a foto de perfil circular */
+    border:  3px solid #ff5627; /*define a borda da foto de perfil com a cor laranja*/
+}
+
+.light .profile-photo {
+    border: 3px solid #4B55EA; /* altera a cor da borda para azul no modo claro*/
+}
+
+/*estilo para o modo claro */
+
+.light a, .light p, .light ion-icon {
+    color: black; /* altera a cor do texto dos links, paragrafos e icones para preto no modo claro*/
+}
+
+/* media queries - PARA RESPONSIVIDADE*/
+
+@media(min-width:70px){
+    bory {
+        background:  url(../img/bg-desktop.jpg) no-repeat top center/cover;/*altera o fundo do corpo para desktop em telas maiores*/
+    }
+    .light bory{
+        background: url(../img/bg-desktop-light.jpg) no-repeat top center/cover; /* altera o fundo do corpo para desktop no modo claro*/
+    }
+}
+
+/* animation*/
+
+@keyframes slide-in {
+    from{
+        left: 0; /*define a posição inicial do botão no slide-in*/
+    }
+    to{
+        left: 50%; /*define a posição final do botão no slide-in*/
+    }
+}
+
+@keyframes slide-back {
+    from{
+        left: 50%; /* define a posição inicial do botão no slide-back*/
+    }
+    to{
+        left: 0;/* define a posição final do botão no slide-back*/
+    }
+}
